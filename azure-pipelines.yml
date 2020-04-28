@@ -16,3 +16,10 @@
         localeOption: 'en_US'
 - task: PowerShell@2
   inputs:
+  - task: Ant@1
+    inputs:
+      buildFile: 'build.xml'
+      options: 
+      publishJUnitResults: true
+      testResultsFiles: '**/TEST-*.xml'
+      javaHomeOption: 'JDKVersion'
